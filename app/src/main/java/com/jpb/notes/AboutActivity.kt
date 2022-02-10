@@ -95,7 +95,7 @@ class AboutActivity : AbsAboutActivity() {
         if (Locale.getDefault().getLanguage() == "en")
         {
             items.add(Category("Changelog"))
-            items.add(Card("•   Updates AndroidX Core library to 1.8.0 alpha 4\n"))
+            items.add(Card("•   Updates AndroidX Core library to 1.8.0 alpha 4"))
             items.add(Category("Licence"))
             items.add(Card("Copyright 2021-2022 jpb\n" +
                     "\n" +
