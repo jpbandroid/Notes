@@ -11,8 +11,8 @@ android {
         applicationId "com.jpb.notes"
         minSdk 22
         targetSdk 32
-        versionCode 1303
-        versionName "13.0.3.0.SNTMNJB"
+        versionCode 1310
+        versionName "13.1.0.0.SNTMNJB"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
