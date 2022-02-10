@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 *.iml
 .gradle
 /local.properties
@@ -14,9 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
-=======
-/build
-local.properties
 /.idea
 /.vscode
 /.venv
@@ -24,5 +20,3 @@ local.properties
 /ActivityLauncherApp/build
 /ActivityLauncherApp/release
 /ActivityLauncherApp/keystore.jks
-*.iml
->>>>>>> upstream/master
