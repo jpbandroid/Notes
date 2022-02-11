@@ -44,6 +44,21 @@ class AboutActivity : AbsAboutActivity() {
                     .setPositiveButton(
                         getString(R.string.yesr)
                     ) { dialog, which ->
+                        MaterialAlertDialogBuilder(this@AboutActivity) // we can't use getApplicationContext() here as we want the activity to be the context, not the application
+                            .setTitle("Choose OSS License UI")
+                            .setPositiveButton(
+                                "jpb Custom UI"
+                            ) { dialog, which ->
+
+                                val intent = Intent(applicationContext, com.jpb.notes.oss.licenses.osslicence.ComposeActivity::class.java)
+                                startActivity(intent)
+                            }
+                            .setNegativeButton( "GMS UI", { dialog, which ->
+
+                                val intent = Intent(applicationContext, OssLicensesMenuActivity::class.java)
+                                startActivity(intent)
+                            } )
+                            .show()
                         val intent = Intent(applicationContext, OssLicensesMenuActivity::class.java)
                         startActivity(intent)
                     }
