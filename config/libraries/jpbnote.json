@@ -1,0 +1,14 @@
+{
+  "uniqueId": "com.jpb.notes:v2",
+  "developers": [{
+      "name": "jpb",
+      "organisationUrl": "https://occoam.com/jpb"
+    }],
+  "artifactVersion": "13.1.0.0.SNTMNJB",
+  "description": "The jpb Notes app, the one which you are using right now!",
+  "name": "jpb Notes App",
+  "tag": "app",
+  "licenses": [
+    "Apache-2.0"
+  ]
+}

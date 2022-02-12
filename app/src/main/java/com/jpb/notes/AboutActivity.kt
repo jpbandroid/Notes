@@ -123,7 +123,7 @@ class AboutActivity : AbsAboutActivity() {
         if (Locale.getDefault().getLanguage() == "en")
         {
             items.add(Category("Changelog"))
-            items.add(Card("•   Updates AndroidX Core library to 1.8.0 alpha 4"))
+            items.add(Card("•   Adds new OSS Licences UI (Jetpack Compose based!), and lets you switch between it and the existing GMS one\n•   Adds Quick Notes (beta)\n•   Upgrades Gradle to version 7.4, and AGP to version 7.1.1"))
             items.add(Category("Licence"))
             items.add(Card("Copyright 2021-2022 jpb\n" +
                     "\n" +

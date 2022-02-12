@@ -49,6 +49,7 @@ class OSSLicense : ComponentActivity() {
     }
 }
 
+@Preview
 @Composable
 fun MainLayout() {
     MaterialTheme(

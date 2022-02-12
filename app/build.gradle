@@ -14,6 +14,7 @@ android {
         targetSdk 32
         versionCode 1310
         versionName "13.1.0.0.SNTMNJB"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -45,6 +46,15 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
     }
+}
+
+
+aboutLibraries {
+    configPath = "config"
+    fetchRemoteLicense = true
+    strictMode = com.mikepenz.aboutlibraries.plugin.StrictMode.FAIL
+    // Allowed set of licenses, this project will be able to use without build failure
+    allowedLicenses = ["Apache-2.0", "asdkl", "mit", "LGPL-2.0-or-later", "BSD-3-Clause", "Other | NOASSERTION"]
 }
 
 dependencies {
