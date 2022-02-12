@@ -189,4 +189,5 @@
     <string name="licenceonlyenglish">Sorry for interrupting, but the licences in the Open source licences activity are only in English, so you might not understand them fully if you don\'t know English.</string>
     <string name="osswarning">Important info before reading Open source licences</string>
     <string name="yesr">Yes, I understand</string>
+    <string name="title_activity_osslicense">OSSLicenseActivity</string>
 </resources>

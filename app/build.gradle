@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.android.gms.oss-licenses-plugin'
+    id 'com.mikepenz.aboutlibraries.plugin'
 }
 
 android {
@@ -15,11 +16,9 @@ android {
         versionName "13.1.0.0.SNTMNJB"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-    buildFeatures {
-        // Enables Jetpack Compose for this module
-        compose true
-        suppressKotlinVersionCompatibilityCheck
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -35,6 +34,17 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    packagingOptions {
+    resources {
+        excludes += '/META-INF/{AL2.0,LGPL2.1}'
+    }
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
 }
 
 dependencies {
@@ -43,7 +53,11 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.6.0-alpha02'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
-    implementation 'androidx.compose.material:material:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.activity:activity-compose:1.4.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0-alpha03'
@@ -51,21 +65,10 @@ dependencies {
     implementation 'com.drakeet.multitype:multitype:4.3.0'
     implementation 'com.google.android.gms:play-services-oss-licenses:17.0.0'
     // Integration with activities
-    implementation 'androidx.activity:activity-compose:1.4.0'
-    // Compose Material Design
-    implementation 'androidx.compose.material:material:1.1.0'
-    // When using a MDC theme
-    implementation "com.google.android.material:compose-theme-adapter:1.1.4"
-    // Animations
-    implementation 'androidx.compose.animation:animation:1.1.0'
-    // Tooling support (Previews, etc.)
-    implementation 'androidx.compose.ui:ui-tooling:1.1.0'
-    // Integration with ViewModels
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0-alpha02'
-    // UI Tests
-    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.1.0'
     implementation 'com.google.accompanist:accompanist-insets-ui:0.23.0'
     implementation 'com.google.accompanist:accompanist-systemuicontroller:0.23.0'
     implementation 'com.mikepenz:aboutlibraries-core:10.0.0-b09'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
     implementation 'com.mikepenz:aboutlibraries-compose:10.0.0-b09'
 }

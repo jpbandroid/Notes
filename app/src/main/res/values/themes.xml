@@ -20,6 +20,7 @@
         <item name="android:scrollbarThumbVertical">@drawable/afs_md2_thumb</item>
         <item name="android:scrollbarTrackVertical">@drawable/afs_md2_track</item>
     </style>
+
     <style name="Theme.Notes.About" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>

@@ -1,6 +1,14 @@
-package com.jpb.notes.oss.licenses.osslicence
+package com.jpb.notes.oss.licenses.ui
 
 import android.os.Bundle
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
+import com.jpb.notes.oss.licenses.ui.ui.theme.NotesTheme
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -8,7 +16,6 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.*
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.List
@@ -25,26 +32,23 @@ import com.google.accompanist.insets.ui.TopAppBar
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.mikepenz.aboutlibraries.ui.compose.LibrariesContainer
 
-class ComposeActivity : ComponentActivity() {
-
+class OSSLicense : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-
         setContent {
-            // Update the system bars to be translucent
-            val systemUiController = rememberSystemUiController()
-            SideEffect {
-                systemUiController.setSystemBarsColor(Color.Transparent, darkIcons = false)
+            NotesTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+                    MainLayout()
+                }
             }
-
-            MainLayout()
         }
     }
 }
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun MainLayout() {
     MaterialTheme(
@@ -60,7 +64,7 @@ fun MainLayout() {
                     // We use TopAppBar from accompanist-insets-ui which allows us to provide
                     // content padding matching the system bars insets.
                     TopAppBar(
-                        title = { Text("OSS Licenses") },
+                        title = { Text("Open Source Licenses") },
                         backgroundColor = MaterialTheme.colors.surface.copy(alpha = 0.9f),
                         contentPadding = rememberInsetsPaddingValues(
                             LocalWindowInsets.current.statusBars,
@@ -68,9 +72,18 @@ fun MainLayout() {
                         ),
                         modifier = Modifier.fillMaxWidth(),
                         actions = {
-                            IconButton(onClick = { showAuthor = !showAuthor }) { Icon(Icons.Default.Person, "Author") }
-                            IconButton(onClick = { showVersion = !showVersion }) { Icon(Icons.Default.Build, "Version") }
-                            IconButton(onClick = { showLicenseBadges = !showLicenseBadges }) { Icon(Icons.Default.List, "Licenses") }
+                            IconButton(onClick = {
+                                showAuthor = !showAuthor
+                            }) { Icon(Icons.Default.Person, "Author") }
+                            IconButton(onClick = {
+                                showVersion = !showVersion
+                            }) { Icon(Icons.Default.Build, "Version") }
+                            IconButton(onClick = { showLicenseBadges = !showLicenseBadges }) {
+                                Icon(
+                                    Icons.Default.List,
+                                    "Licenses"
+                                )
+                            }
                         }
                     )
                 },

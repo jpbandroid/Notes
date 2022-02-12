@@ -6,11 +6,9 @@ import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import com.drakeet.about.*
-import com.jpb.notes.R
-import com.jpb.notes.BuildConfig
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
+import com.jpb.notes.oss.licenses.ui.OSSLicense
 import java.util.*
 
 class AboutActivity : AbsAboutActivity() {
@@ -50,7 +48,7 @@ class AboutActivity : AbsAboutActivity() {
                                 "jpb Custom UI"
                             ) { dialog, which ->
 
-                                val intent = Intent(applicationContext, com.jpb.notes.oss.licenses.osslicence.ComposeActivity::class.java)
+                                val intent = Intent(applicationContext, OSSLicense::class.java)
                                 startActivity(intent)
                             }
                             .setNegativeButton( "GMS UI", { dialog, which ->
@@ -59,32 +57,29 @@ class AboutActivity : AbsAboutActivity() {
                                 startActivity(intent)
                             } )
                             .show()
-                        val intent = Intent(applicationContext, OssLicensesMenuActivity::class.java)
-                        startActivity(intent)
                     }
-                    .setNegativeButton(getString(R.string.notext), { dialog, which ->
-                        MaterialAlertDialogBuilder(this@AboutActivity) // we can't use getApplicationContext() here as we want the activity to be the context, not the application
-                            .setTitle("Choose OSS License UI")
-                            .setPositiveButton(
-                                "jpb Custom UI"
-                            ) { dialog, which ->
+                    .setNegativeButton(getString(R.string.notext)) { dialog, which ->
 
-                                val intent = Intent(applicationContext, com.jpb.notes.oss.licenses.osslicence.ComposeActivity::class.java)
-                                startActivity(intent)
-                            }
-                            .setNegativeButton( "GMS UI", { dialog, which ->
-
-                                val intent = Intent(applicationContext, OssLicensesMenuActivity::class.java)
-                                startActivity(intent)
-                            } )
-                            .show()
-                        val intent = Intent(applicationContext, OssLicensesMenuActivity::class.java)
-                        startActivity(intent)
-                    })
+                    }
                     .show()
             } else {
-                val intent = Intent(applicationContext, OssLicensesMenuActivity::class.java)
-                startActivity(intent)
+                MaterialAlertDialogBuilder(this@AboutActivity) // we can't use getApplicationContext() here as we want the activity to be the context, not the application
+                    .setTitle("Choose OSS License UI")
+                    .setPositiveButton(
+                        "jpb Custom UI"
+                    ) { dialog, which ->
+
+                        val intent =
+                            Intent(applicationContext, OSSLicense::class.java)
+                        startActivity(intent)
+                    }
+                    .setNegativeButton("GMS UI") { dialog, which ->
+
+                        val intent =
+                            Intent(applicationContext, OssLicensesMenuActivity::class.java)
+                        startActivity(intent)
+                    }
+                    .show()
             }
             return true
         }
