@@ -6,15 +6,106 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <GridView
-        android:id="@+id/listView"
-        style="@android:style/Widget.Material.GridView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fastScrollAlwaysVisible="true"
-        android:fastScrollEnabled="true"
-        android:numColumns="2"
-        android:scrollbarThumbHorizontal="@drawable/afs_md2_thumb"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/quicknotelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="256dp"
+                android:layout_height="128dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/editTextTextPersonName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:freezesText="true"
+                        android:hint="Title"
+                        android:inputType="textPersonName" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/textfield_label"
+
+                        app:counterEnabled="true"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="256dp"
+                android:layout_height="128dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/editTextTextPersonName2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:freezesText="true"
+                        android:hint="Title"
+                        android:inputType="textPersonName" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/textfield_label"
+
+                        app:counterEnabled="true"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/listView"
+            style="@android:style/Widget.Material.GridView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fastScrollAlwaysVisible="true"
+            android:fastScrollEnabled="true"
+            android:numColumns="2"
+            android:scrollbarThumbHorizontal="@drawable/afs_md2_thumb" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

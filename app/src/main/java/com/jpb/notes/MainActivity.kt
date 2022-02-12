@@ -42,6 +42,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             return true
         }
+        if (item.itemId == R.id.quicknote) {
+            val quicknotepane = findViewById<LinearLayout>(R.id.quicknotelayout)
+            if (quicknotepane.visibility == View.GONE) {
+                quicknotepane.visibility = View.VISIBLE
+            } else if (quicknotepane.visibility == View.VISIBLE) {
+                quicknotepane.visibility = View.GONE
+            } else {}
+            return true
+        }
         return false
     }
 

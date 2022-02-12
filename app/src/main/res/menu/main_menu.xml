@@ -8,6 +8,11 @@
         android:title="@string/add_note"
         app:showAsAction="ifRoom"></item>
     <item
+        android:id="@+id/quicknote"
+        android:icon="@drawable/ic_round_sticky_note_2_24"
+        android:title="Show/Hide Quick Notes"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/info"
         android:icon="@drawable/ic_round_info_24"
         android:title="@string/about_jpb_notes"
