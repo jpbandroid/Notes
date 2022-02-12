@@ -44,10 +44,6 @@
         </activity>
         <activity android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity" />
         <activity android:name="com.google.android.gms.oss.licenses.OssLicensesActivity" />
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/gmsver"
-            tools:replace="android:value"/>
     </application>
 
 </manifest>
