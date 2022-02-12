@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.jpb.notes">
 
     <uses-feature
@@ -45,7 +46,8 @@
         <activity android:name="com.google.android.gms.oss.licenses.OssLicensesActivity" />
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/gmsver" />
+            android:value="@integer/gmsver"
+            tools:replace="android:value"/>
     </application>
 
 </manifest>
